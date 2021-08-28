@@ -2,6 +2,7 @@ const twUtilCss = require('./src/styles/twUtilCss')
 
 module.exports = {
   mode: 'jit',
+  important: false,
   dark: false,
   purge: [
     // Your CSS will rebuild any time *any* file in `src` changes
