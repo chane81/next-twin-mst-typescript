@@ -27,7 +27,7 @@ const Ssr: NextPage<IProps> = ({ initialState }) => {
 
   console.log('useStore state', store.barModel.barVal);
 
-  return <div>ssr page: {store.barModel.barVal}</div>;
+  return <div className='btn'>ssr page: {store.barModel.barVal}</div>;
 };
 
 export default Ssr;
