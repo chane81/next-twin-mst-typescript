@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "tw-watch": "cross-env TAILWIND_MODE=watch tailwind -i src/styles/tailwind.css -o src/styles/build.css --watch",
+    "tw-build": "cross-env NODE_ENV=production tailwind -i src/styles/tailwind.css -o src/styles/build.css",
+    "dev": "concurrently \"yarn:tw-watch\" \"yarn:next dev\"",
+    "build": "yarn tw-build && next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -34,14 +36,16 @@
     "@types/node": "^16.7.1",
     "@types/react": "^17.0.19",
     "babel-plugin-macros": "^3.1.0",
+    "concurrently": "^6.2.1",
     "eslint": "^7.32.0",
     "eslint-config-next": "^11.1.0",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
     "tailwindcss": "^2.2.7"
   },
   "babelMacros": {
     "twin": {
       "preset": "emotion"
-      
     }
   }
 }
