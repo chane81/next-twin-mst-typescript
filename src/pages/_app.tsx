@@ -5,7 +5,8 @@ import env from '../../env';
 import { GlobalStyles } from 'twin.macro';
 import { NextPage } from 'next';
 import { AppProps } from 'next/app';
-import 'tailwindcss/dist/base.min.css';
+//import 'tailwindcss/dist/base.min.css';
+import '../styles/build.css';
 
 const App: NextPage<AppProps> = ({ Component, pageProps }) => {
   const store = initializeStore(pageProps.initialState);
