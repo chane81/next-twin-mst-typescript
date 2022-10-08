@@ -1,17 +1,13 @@
-const withPlugins = require('next-compose-plugins');
 const dotenv = require('dotenv');
 const isDev = process.env.NODE_ENV === 'development';
 const env = dotenv.config({ path: `./env/.env.${isDev ? 'dev' : 'prod'}` }).parsed || {};
 
+/**
+ * @type {import('next').NextConfig}
+ **/
 const nextConfig = {
   // .env 값 세팅
   env,
-
-  // webpack 5 사용 여부 >> next.js 11 미만 버전에서 아래와 같이 future > webpack5 로 webpack5버전 설정을 할 수 있었으나
-  // next.js 11 버전부터는 webpack5 가 기본이다.
-  // future: {
-  //   webpack5: true,
-  // },
 
   // 웹팩 설정
   webpack: (config, options) => {
@@ -23,15 +19,6 @@ const nextConfig = {
     //   config.devtool = 'inline-source-map';
     // }
 
-    // webpack 4 일 경우
-    // dotenv 에 대한 'Module not found: Can't resolve 'fs' 에러 방지
-    // if (!options.isServer) {
-    //   config.node = {
-    //     fs: 'empty',
-    //   };
-    // }
-
-    // webpack 5 일 경우
     // webpack 5 부터는 config.node 안씀 -> resolve.fallback 써야함
     if (!options.isServer) {
       // config.resolve.fallback = {
@@ -67,4 +54,17 @@ const nextConfig = {
   },
 };
 
-module.exports = withPlugins([], nextConfig);
+
+/**
+ * next.js 12.2.3 이후로 next-compose-plugin은 더이상 작동하지 않으므로 
+ * 아래와 같이 reduce로 대체
+ * 참고: https://dev.to/krzysztofzuraw/migrating-nextjs-plugins-from-next-compose-plugins-2gnl
+ */
+module.exports = () => {
+  // plugin 은 아래 배열에 넣어줄것
+  const plugins = [];
+  const config = plugins.reduce((acc, next) => next(acc), {
+    ...nextConfig,
+  });
+  return config;
+};

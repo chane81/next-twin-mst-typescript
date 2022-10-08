@@ -1,26 +1,25 @@
+const plugin = require('tailwindcss/plugin');
+const colors = require('tailwindcss/colors');
 const twUtilCss = require('./src/styles/twUtilCss')
 
+/** @type {import("@types/tailwindcss/tailwind-config").TailwindConfig } */
 module.exports = {
-  mode: 'jit',
   important: false,
-  dark: false,
-  purge: [
-    // Your CSS will rebuild any time *any* file in `src` changes
+  content: [
     './src/**/*.{ts,tsx}',
   ],
   theme: {
     extend: {
       colors: {
-        electric: '#db00ff',
-        ribbon: '#0047ff',
+        lime: colors.lime,
+        stone: colors.stone,
+        slate: colors.slate,
       },
     },
   },
   plugins: [
-    function({ addUtilities, addComponents, e, prefix, config }) {
-
+    plugin(({ addUtilities, addComponents, e, config  }) => {
       addUtilities(twUtilCss);
-
-    }
+    }),
   ],
 }
