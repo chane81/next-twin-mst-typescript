@@ -2,9 +2,7 @@ const dotenv = require('dotenv');
 const isDev = process.env.NODE_ENV === 'development';
 const env = dotenv.config({ path: `./env/.env.${isDev ? 'dev' : 'prod'}` }).parsed || {};
 
-/**
- * @type {import('next').NextConfig}
- **/
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   // .env 값 세팅
   env,
@@ -49,6 +47,7 @@ const nextConfig = {
 
     return config;
   },
+
   images: {
     domains: ['tailwindcss.com'],
   },
