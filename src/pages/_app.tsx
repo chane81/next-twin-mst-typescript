@@ -1,5 +1,5 @@
 import makeInspectable from 'mobx-devtools-mst';
-import { initializeStore, useStore, StoreProvider } from '../stores';
+import { initializeStore, StoreProvider, IStoreSnapshotIn } from '../stores';
 import { onPatch } from 'mobx-state-tree';
 import env from '../../env';
 import { GlobalStyles } from 'twin.macro';
@@ -8,7 +8,13 @@ import { AppProps } from 'next/app';
 //import 'tailwindcss/dist/base.min.css';
 import '../styles/build.css';
 
-const App: NextPage<AppProps> = ({ Component, pageProps }) => {
+interface IProps extends AppProps {
+  pageProps: {
+    initialState: null | IStoreSnapshotIn;
+  };
+}
+
+const App: NextPage<IProps> = ({ Component, pageProps }) => {
   const store = initializeStore(pageProps.initialState);
 
   // mst 디버깅 로그
