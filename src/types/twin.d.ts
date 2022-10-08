@@ -5,16 +5,9 @@ import styledImport from '@emotion/styled';
 
 // html 태그의 props 스타일로 사용할 속성의 타입
 declare module 'react' {
-  // html 일반 태그
-  interface HTMLAttributes<T> extends DOMAttributes<T> {
-    css?: CSSInterpolation;
+  interface DOMAttributes<T> {
     tw?: string;
-  }
-
-  // svg 용
-  interface SVGProps<T> extends SVGProps<SVGSVGElement> {
     css?: CSSInterpolation;
-    tw?: string;
   }
 }
 
