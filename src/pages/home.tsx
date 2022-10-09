@@ -19,12 +19,24 @@ const Home = () => {
   console.log('rendering');
 
   return (
-    <div>
-      <div>
-        <button onClick={handleFooClick}>fooSet</button>
-      </div>
-      <div>
-        <button onClick={handleBarClick}>barSet</button>
+    <div className='p-4'>
+      <div className='flex gap-4 mb-4'>
+        <div>
+          <button
+            className='bg-sky-200 opacity-90 py-1 px-2 rounded-lg text-sky-900 hover:opacity-100'
+            onClick={handleFooClick}
+          >
+            fooSet
+          </button>
+        </div>
+        <div>
+          <button
+            className='bg-pink-200 opacity-90 py-1 px-2 rounded-md text-pink-900 hover:opacity-100'
+            onClick={handleBarClick}
+          >
+            barSet
+          </button>
+        </div>
       </div>
       <div>foo fooVal: {fooModel.fooVal}</div>
       <div>foo count: {fooModel.count}</div>
@@ -40,8 +52,8 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
   const store = initializeStore({
     fooModel: {
-      fooVal: 'test11'
-    }
+      fooVal: 'test11',
+    },
   });
   store.fooModel.setCount(3);
 
@@ -51,7 +63,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
   return {
     props: {
-      initialState
-    }
+      initialState,
+    },
   };
 };
