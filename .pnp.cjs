@@ -43,11 +43,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["dotenv", "npm:16.0.3"],\
             ["eslint", "npm:8.25.0"],\
             ["eslint-config-next", "virtual:90d3ab7c49566e0336b1591abc5b94106ccb58d789f52cddfafd6517c1348451d067da22c88147206886c60d09fc1b88ef81ae59b983b9a85fad45ba388baef7#npm:12.3.1"],\
+            ["localforage", "npm:1.10.0"],\
             ["mobx", "npm:6.6.2"],\
             ["mobx-devtools-mst", "virtual:90d3ab7c49566e0336b1591abc5b94106ccb58d789f52cddfafd6517c1348451d067da22c88147206886c60d09fc1b88ef81ae59b983b9a85fad45ba388baef7#npm:0.9.30"],\
             ["mobx-react", "virtual:90d3ab7c49566e0336b1591abc5b94106ccb58d789f52cddfafd6517c1348451d067da22c88147206886c60d09fc1b88ef81ae59b983b9a85fad45ba388baef7#npm:7.5.3"],\
             ["mobx-react-lite", "virtual:90d3ab7c49566e0336b1591abc5b94106ccb58d789f52cddfafd6517c1348451d067da22c88147206886c60d09fc1b88ef81ae59b983b9a85fad45ba388baef7#npm:3.4.0"],\
             ["mobx-state-tree", "virtual:90d3ab7c49566e0336b1591abc5b94106ccb58d789f52cddfafd6517c1348451d067da22c88147206886c60d09fc1b88ef81ae59b983b9a85fad45ba388baef7#npm:5.1.6"],\
+            ["mst-persist", "virtual:90d3ab7c49566e0336b1591abc5b94106ccb58d789f52cddfafd6517c1348451d067da22c88147206886c60d09fc1b88ef81ae59b983b9a85fad45ba388baef7#npm:0.1.3"],\
             ["next", "virtual:90d3ab7c49566e0336b1591abc5b94106ccb58d789f52cddfafd6517c1348451d067da22c88147206886c60d09fc1b88ef81ae59b983b9a85fad45ba388baef7#npm:12.3.1"],\
             ["postcss", "npm:8.4.17"],\
             ["postcss-cli", "virtual:90d3ab7c49566e0336b1591abc5b94106ccb58d789f52cddfafd6517c1348451d067da22c88147206886c60d09fc1b88ef81ae59b983b9a85fad45ba388baef7#npm:10.0.0"],\
@@ -3440,6 +3442,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["immediate", [\
+        ["npm:3.0.6", {\
+          "packageLocation": "./.yarn/cache/immediate-npm-3.0.6-c27588a2d3-f9b3486477.zip/node_modules/immediate/",\
+          "packageDependencies": [\
+            ["immediate", "npm:3.0.6"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["import-fresh", [\
         ["npm:3.3.0", {\
           "packageLocation": "./.yarn/cache/import-fresh-npm-3.3.0-3e34265ca9-2cacfad06e.zip/node_modules/import-fresh/",\
@@ -3884,6 +3895,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["lie", [\
+        ["npm:3.1.1", {\
+          "packageLocation": "./.yarn/cache/lie-npm-3.1.1-91350720d9-6da9f2121d.zip/node_modules/lie/",\
+          "packageDependencies": [\
+            ["lie", "npm:3.1.1"],\
+            ["immediate", "npm:3.0.6"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["lilconfig", [\
         ["npm:2.0.6", {\
           "packageLocation": "./.yarn/cache/lilconfig-npm-2.0.6-6231346eaf-40a3cd72f1.zip/node_modules/lilconfig/",\
@@ -3898,6 +3919,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/lines-and-columns-npm-1.2.4-d6c7cc5799-0c37f9f7fa.zip/node_modules/lines-and-columns/",\
           "packageDependencies": [\
             ["lines-and-columns", "npm:1.2.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["localforage", [\
+        ["npm:1.10.0", {\
+          "packageLocation": "./.yarn/cache/localforage-npm-1.10.0-cf9ea9a436-f2978b434d.zip/node_modules/localforage/",\
+          "packageDependencies": [\
+            ["localforage", "npm:1.10.0"],\
+            ["lie", "npm:3.1.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -4293,6 +4324,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/ms-npm-2.1.3-81ff3cfac1-aa92de6080.zip/node_modules/ms/",\
           "packageDependencies": [\
             ["ms", "npm:2.1.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["mst-persist", [\
+        ["npm:0.1.3", {\
+          "packageLocation": "./.yarn/cache/mst-persist-npm-0.1.3-ae3dedb2dc-5accdea61e.zip/node_modules/mst-persist/",\
+          "packageDependencies": [\
+            ["mst-persist", "npm:0.1.3"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:90d3ab7c49566e0336b1591abc5b94106ccb58d789f52cddfafd6517c1348451d067da22c88147206886c60d09fc1b88ef81ae59b983b9a85fad45ba388baef7#npm:0.1.3", {\
+          "packageLocation": "./.yarn/__virtual__/mst-persist-virtual-95932b5fb0/0/cache/mst-persist-npm-0.1.3-ae3dedb2dc-5accdea61e.zip/node_modules/mst-persist/",\
+          "packageDependencies": [\
+            ["mst-persist", "virtual:90d3ab7c49566e0336b1591abc5b94106ccb58d789f52cddfafd6517c1348451d067da22c88147206886c60d09fc1b88ef81ae59b983b9a85fad45ba388baef7#npm:0.1.3"],\
+            ["@types/mobx-state-tree", null],\
+            ["mobx-state-tree", "virtual:90d3ab7c49566e0336b1591abc5b94106ccb58d789f52cddfafd6517c1348451d067da22c88147206886c60d09fc1b88ef81ae59b983b9a85fad45ba388baef7#npm:5.1.6"]\
+          ],\
+          "packagePeers": [\
+            "@types/mobx-state-tree",\
+            "mobx-state-tree"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -6201,11 +6254,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["dotenv", "npm:16.0.3"],\
             ["eslint", "npm:8.25.0"],\
             ["eslint-config-next", "virtual:90d3ab7c49566e0336b1591abc5b94106ccb58d789f52cddfafd6517c1348451d067da22c88147206886c60d09fc1b88ef81ae59b983b9a85fad45ba388baef7#npm:12.3.1"],\
+            ["localforage", "npm:1.10.0"],\
             ["mobx", "npm:6.6.2"],\
             ["mobx-devtools-mst", "virtual:90d3ab7c49566e0336b1591abc5b94106ccb58d789f52cddfafd6517c1348451d067da22c88147206886c60d09fc1b88ef81ae59b983b9a85fad45ba388baef7#npm:0.9.30"],\
             ["mobx-react", "virtual:90d3ab7c49566e0336b1591abc5b94106ccb58d789f52cddfafd6517c1348451d067da22c88147206886c60d09fc1b88ef81ae59b983b9a85fad45ba388baef7#npm:7.5.3"],\
             ["mobx-react-lite", "virtual:90d3ab7c49566e0336b1591abc5b94106ccb58d789f52cddfafd6517c1348451d067da22c88147206886c60d09fc1b88ef81ae59b983b9a85fad45ba388baef7#npm:3.4.0"],\
             ["mobx-state-tree", "virtual:90d3ab7c49566e0336b1591abc5b94106ccb58d789f52cddfafd6517c1348451d067da22c88147206886c60d09fc1b88ef81ae59b983b9a85fad45ba388baef7#npm:5.1.6"],\
+            ["mst-persist", "virtual:90d3ab7c49566e0336b1591abc5b94106ccb58d789f52cddfafd6517c1348451d067da22c88147206886c60d09fc1b88ef81ae59b983b9a85fad45ba388baef7#npm:0.1.3"],\
             ["next", "virtual:90d3ab7c49566e0336b1591abc5b94106ccb58d789f52cddfafd6517c1348451d067da22c88147206886c60d09fc1b88ef81ae59b983b9a85fad45ba388baef7#npm:12.3.1"],\
             ["postcss", "npm:8.4.17"],\
             ["postcss-cli", "virtual:90d3ab7c49566e0336b1591abc5b94106ccb58d789f52cddfafd6517c1348451d067da22c88147206886c60d09fc1b88ef81ae59b983b9a85fad45ba388baef7#npm:10.0.0"],\

@@ -1,14 +1,16 @@
-import { createContext, useContext } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import {
   applySnapshot,
   Instance,
   SnapshotIn,
   SnapshotOut,
-  types
+  types,
 } from 'mobx-state-tree';
 import { enableStaticRendering } from 'mobx-react';
 import fooStore from './foo/fooStore';
 import barStore from './bar/barStore';
+import { persist } from 'mst-persist';
+import localForage from 'localforage';
 
 let initStore: IStore | undefined = null as any;
 
@@ -29,13 +31,13 @@ const store = types.model('store', {
   /** foo model */
   fooModel: types.optional(fooStore.model, () => fooStore.create),
   /** barModel model */
-  barModel: types.optional(barStore.model, () => barStore.create)
+  barModel: types.optional(barStore.model, () => barStore.create),
 });
 
 /** default state value */
 const defaultValue: IStoreSnapshotIn = {
   fooModel: { ...fooStore.defaultValue },
-  barModel: { ...barStore.defaultValue }
+  barModel: { ...barStore.defaultValue },
 };
 
 /** 스토어 initialize */
@@ -68,6 +70,15 @@ const useStore = (snapshot: null | IStoreSnapshotIn = null): IStore => {
 
   if (store === null) {
     throw new Error('Store cannot be null, please add a context provider');
+  }
+
+  // persist
+  if (typeof window !== 'undefined') {
+    persist('store', store, {
+      storage: localForage,
+      jsonify: true,
+      whitelist: ['fooModel', 'barModel'],
+    });
   }
 
   return store;
