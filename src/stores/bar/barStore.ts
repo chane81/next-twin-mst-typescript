@@ -8,7 +8,7 @@ const model = types
   .model(IDENTIFIER, {
     /** 스토어 아이덴티티 */
     identifier: types.optional(types.identifier, IDENTIFIER),
-    barVal: types.optional(types.string, ''),
+    barVal: types.optional(types.string, ""),
     count: types.optional(types.number, 0)
   })
   .actions((self) => {

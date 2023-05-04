@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,5 +12,11 @@
   }
   .btn74 {
     @apply font-bold py-2 px-4 rounded border-2 border-gray-400;
+  }
+}
+
+@layer base {
+  html {
+    font-family: Inter;
   }
 }

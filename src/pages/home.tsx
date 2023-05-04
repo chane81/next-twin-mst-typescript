@@ -16,7 +16,7 @@ const Home = () => {
     barModel.addCount();
   };
 
-  console.log('rendering');
+  console.log("rendering")
 
   return (
     <div className='p-4'>

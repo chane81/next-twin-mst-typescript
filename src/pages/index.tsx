@@ -33,7 +33,7 @@ const Home = () => {
       </div>
       <div className='md:flex m-12 bg-gray-100 rounded-xl p-8 md:p-0'>
         <img
-          className='md:w-96 border-2 md:w-36 md:h-56 sm:w-64 sm:h-80 lg:ml-0 lg:rounded-l-2xl md:rounded-none rounded-full mx-auto'
+          className='md:w-96 border-2 md:h-56 sm:w-64 sm:h-80 lg:ml-0 lg:rounded-l-2xl md:rounded-none rounded-full mx-auto'
           src='https://tailwindcss.com/_next/static/media/sarah-dayan.a8ff3f1095a58085a82e3bb6aab12eb2.jpg'
         />
         <div tw='pt-6 md:flex-1 md:p-8 text-center md:text-left space-y-4'>
@@ -89,8 +89,8 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
   const store = initializeStore({
     fooModel: {
-      fooVal: 'test11'
-    }
+      fooVal: 'test11',
+    },
   });
   store.fooModel.setCount(3);
 
@@ -100,7 +100,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
   return {
     props: {
-      initialState
-    }
+      initialState,
+    },
   };
 };

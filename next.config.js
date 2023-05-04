@@ -1,4 +1,5 @@
 const dotenv = require('dotenv');
+const withTwin = require('./withTwin.js')
 const isDev = process.env.NODE_ENV === 'development';
 const env = dotenv.config({ path: `./env/.env.${isDev ? 'dev' : 'prod'}` }).parsed || {};
 
@@ -20,11 +21,13 @@ const nextConfig = {
     // webpack 5 부터는 config.node 안씀 -> resolve.fallback 써야함
     if (!options.isServer) {
       // config.resolve.fallback = {
+      //   ...(config.resolve.fallback || {}),
       //   fs: false,
-      //   crypto: false,
+      //   module: false,
       //   path: false,
-      //   stream: false,
-      // };
+      //   os: false,
+      //   crypto: false,
+      // }
     }
 
     // 개발모드인지 여부 true/false
@@ -61,9 +64,10 @@ const nextConfig = {
  */
 module.exports = () => {
   // plugin 은 아래 배열에 넣어줄것
-  const plugins = [];
+  const plugins = [withTwin];
   const config = plugins.reduce((acc, next) => next(acc), {
     ...nextConfig,
   });
+
   return config;
 };

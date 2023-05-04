@@ -5,8 +5,10 @@ import env from '../../env';
 import { GlobalStyles } from 'twin.macro';
 import { NextPage } from 'next';
 import { AppProps } from 'next/app';
+
+import '../styles/tailwind.css';
 //import 'tailwindcss/dist/base.min.css';
-import '../styles/build.css';
+// import '../styles/build.css';
 
 interface IProps extends AppProps {
   pageProps: {
